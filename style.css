@@ -1,0 +1,149 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis */
+:root {
+  /* Fontes */
+  --font-title: 1.875rem 'Big Shoulders Display', cursive;
+  --font-body: 0.9375rem 'Lexend Deca', sans-serif;
+
+  /* Cores */
+  --bright-orange: #e38826;
+  --dark-cyan: #006970;
+  --very-dark-cyan: #004241;
+  --very-light-gray: #f2f2f2;
+  --transparent-white: #fff;
+}
+
+/* Cards */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sedan {
+  background: var(--bright-orange);
+}
+
+.suvs {
+  background: var(--dark-cyan);
+}
+
+.luxury {
+  background: var(--very-dark-cyan);
+}
+
+h2 {
+  font: var(--font-title);
+  color: var(--transparent-white);
+  text-transform: uppercase;
+  padding: 0.625rem;
+  margin: 0.25rem 0;
+}
+
+p {
+  font: var(--font-body);
+  color: var(--transparent-white);
+  line-height: 19px;
+  padding: 0.625rem;
+  margin: 0.25rem;
+  max-width: 237px;
+  max-height: 115px;
+}
+
+.card img {
+  max-width: 4rem;
+}
+
+.card a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: var(--font-body);
+  text-decoration: none;
+  width: 143px;
+  height: 49px;
+  margin: 1.5rem auto;
+
+  color: var(--very-light-gray);
+  border: 1px solid var(--very-light-gray);
+  border-radius: 30px;
+  transition: background 0.3s;
+}
+
+.card-content {
+  padding-top: 3.125rem;
+  padding-bottom: 1.875rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  max-width: 237px;
+  max-height: 376px;
+}
+
+.card-content > a:hover {
+  background: var(--transparent-white);
+}
+
+.sedan > .card-content > a:hover {
+  color: var(--bright-orange);
+}
+
+.suvs > .card-content > a:hover {
+  color: var(--dark-cyan);
+}
+
+.luxury > .card-content > a:hover {
+  color: var(--very-dark-cyan);
+}
+
+.card-content p {
+  margin: 0 auto;
+}
+
+.attribution {
+  text-align: center;
+  font: var(--font-body);
+  font-size: 0.6875rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  font-size: 0.6875rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+      'sedan suvs'
+      'luxury luxury';
+  }
+
+  .card-content {
+    margin: 4.25rem auto;
+  }
+
+  .sedan {
+    grid-area: sedan;
+  }
+
+  .suvs {
+    grid-area: suvs;
+  }
+
+  .luxury {
+    grid-area: luxury;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    grid-template-areas: 'sedan suvs luxury';
+  }
+}
